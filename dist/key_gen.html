@@ -1,0 +1,9 @@
+<script src="eosjs-ecc.js"></script>
+<script>
+var ecc = eosjs_ecc
+
+ecc.randomKey().then(privateKey => {
+   document.write('<br/>Private Key:\t', privateKey) // wif
+   document.write('<br/>Public Key:\t', ecc.privateToPublic(privateKey)) // EOSkey...
+})
+</script>

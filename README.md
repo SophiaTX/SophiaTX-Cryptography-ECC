@@ -238,8 +238,8 @@ pubkey = PrivateKey.fromString(privateWif).toPublic().toString()
 # Browser
 
 ```bash
-git clone https://github.com/EOSIO/eosjs-ecc.git
-cd eosjs-ecc
+git clone https://github.com/SophiaTX/sphtxjs-ecc.git
+cd sphtxjs-ecc
 npm install
 npm run build_browser
 # builds: ./dist/eosjs-ecc.js

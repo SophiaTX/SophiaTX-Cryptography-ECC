@@ -1,5 +1,5 @@
-[![NPM](https://img.shields.io/npm/v/eosjs-ecc.svg)](https://www.npmjs.org/package/eosjs-ecc)
-[![Build Status](https://travis-ci.org/EOSIO/eosjs-ecc.svg?branch=master)](https://travis-ci.org/EOSIO/eosjs-ecc)
+[![NPM](https://img.shields.io/npm/v/sphtxjs-ecc.svg)](https://www.npmjs.org/package/sphtxjs-ecc)
+[![Build Status](https://travis-ci.org/EOSIO/sphtxjs-ecc.svg?branch=master)](https://travis-ci.org/EOSIO/sphtxjs-ecc)
 
 # Elliptic curve cryptography functions (ECC)
 
@@ -8,9 +8,9 @@ Private Key, Public Key, Signature, AES, Encryption / Decryption
 # Import
 
 ```js
-import ecc from 'eosjs-ecc'
+import ecc from 'sphtxjs-ecc'
 // or
-const ecc = require('eosjs-ecc')
+const ecc = require('sphtxjs-ecc')
 ```
 
 # Common API
@@ -218,7 +218,7 @@ Type: [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 # Usage (Object API)
 
 ```js
-let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('eosjs-ecc')
+let {PrivateKey, PublicKey, Signature, Aes, key_utils, config} = require('sphtxjs-ecc')
 
 // Create a new random private key
 let privateWif
@@ -242,16 +242,16 @@ git clone https://github.com/SophiaTX/sphtxjs-ecc.git
 cd sphtxjs-ecc
 npm install
 npm run build_browser
-# builds: ./dist/eosjs-ecc.js
+# builds: ./dist/sphtxjs-ecc.js
 # Verify release hash
 ```
 
 ```html
-<script src=eosjs-ecc.js></script>
+<script src=sphtxjs-ecc.js></script>
 ```
 
 ```js
-var ecc = eosjs_ecc
+var ecc = sphtxjs_ecc
 
 ecc.randomKey().then(privateWif =>  {
   var pubkey = ecc.privateToPublic(privateWif)

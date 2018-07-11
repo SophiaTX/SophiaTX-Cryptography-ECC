@@ -1,9 +1,101 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <script src="sphtxjs-ecc.js"></script>
+	<title>SophiaTX Key Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.ico" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+	<script src="sphtxjs-ecc.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	</style>
 </head>
+
 <body>
-  See console object: sphtxjs_ecc
+
+	<div class="wrap">
+		<div class="row header">
+			<span>
+				<img class="header-logo" src="assets/logo-primary.svg" alt="SophiaTX Marketplace Logo">
+			</span>
+		</div>
+
+		<div class="row content">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h1>Welcome to SophiaTX.
+          <h4>This operation can be executed without internet connection.</h4>
+          <div id="buttonDiv">
+            <button class="btn btn-primary btn-lg" type="button" id="btnGenerateKey">Generate keys</button>
+          </div>				
+				<div class="col" id="keyDiv" style="display: none;">
+					<div class="d-flex flex-row">
+						<h3 class="text-primary">Private key:</h3>
+						<code id="privateKey"></code>
+					</div>
+					<div class="d-flex flex-row">
+						<h3 class="text-info">Public key:</h3>
+						<code id="publicKey"></code>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<div class="row colored-bg">
+			<div class="col-md-2"></div>
+			<div class="col-md-7 text-center">
+				<h4 class="mb-3">All keys are generated randomly by
+					a script, which is executed locally in your browser. These keys are not sent anywhere and thus SophiaTX cannot see,
+					recover or reset them. Always keep your private key in a safe place such as printed on paper, etc.</h4>
+				<!-- <p class="mt">Try to find an answer in FAQ</p> -->
+				<a href="https://github.com/SophiaTX/sphtxjs-ecc">See github repository of the script</a>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<div class="row content-b">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 text-center">
+				<h2>Need a help with token swap process?</h2>
+				<!-- <p class="mt">See the github repository</p> -->
+				<a href="" target="_blank">Read FAQ</a>
+				<a class="ml-2" href="https://www.sophiatx.com/storage/web/Token%20Swap%20Instructions.pdf?_t=1530894632" target="_blank">Read Step-by-step guide</a>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<footer class="row">
+			<div class="flex-between">
+				<div>
+					<p>© 2018 · SophiaTX · All rights reserved</p>
+				</div>
+				<!-- <div>
+						<p>Need a help with token swap process? <a href="" target="_blank">Open FAQ</a></p>
+					</div> -->
+			</div>
+		</footer>
+	</div>
+
+	<script>
+		$(document).ready(() => {
+      let ecc = sphtxjs_ecc;
+			$("#btnGenerateKey").on('click', () => {
+				$("#buttonDiv").toggle(false);				
+				ecc.randomKey().then(privateKey => {
+					$("#privateKey").text(privateKey);
+					$("#publicKey").text(ecc.privateToPublic(privateKey)) // EOSkey...
+					$("#keyDiv").slideToggle('slow', () => { });
+				});
+			})
+		});
+	</script>
 </body>
+
 </html>

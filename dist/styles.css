@@ -30,14 +30,33 @@
 			color: #007663;
 		}
 
+		svg {
+			width: 100px;
+			height: 100px;
+			margin: 20px;
+			display: inline-block;
+		}
+
+		code {
+			display: block;
+			font-size: 1.6rem;
+			overflow-wrap: break-word;
+			white-space: pre-wrap;
+		}
+
+		footer {
+			background-color: transparent;
+			/* color: white; */
+			font-size: 12px;
+			padding: 2rem;
+			border-top: 1px solid #d7d9dd;
+		}
+
+		/* Custom classes */
 		.text-center {
 			text-align: left;
 			padding-right: 2rem;
 		}
-
-		/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-
-		/* Set gray background color and 100% height */
 
 		.wrap {
 			height: 100vh;
@@ -54,7 +73,7 @@
 		}
 
 		.content {
-			height: 72%;
+			height: 60%;
 			display: flex;
 			align-items: center;
 			justify-content: left;
@@ -72,16 +91,6 @@
 			/* background-color: #111923; */
 			background-image: linear-gradient(135deg, #111923 0%, #283951 100%);
 			padding: 4rem 0rem;
-		}
-
-		/* Set black background color, white text and some padding */
-
-		footer {
-			background-color: transparent;
-			/* color: white; */
-			font-size: 12px;
-			padding: 2rem;
-			border-top: 1px solid #d7d9dd;
 		}
 
 		.text-dark {
@@ -103,59 +112,6 @@
 
 		.mt {
 			margin-top: 16px;
-		}
-
-		/* On small screens, set height to 'auto' for sidenav and grid */
-
-		@media screen and (max-width: 767px) {
-			.content {
-				/* padding: 0rem 1rem; */
-				height: 100%;
-				line-height: 1.2;
-				margin-bottom: 2rem;
-			}
-			.header {
-				padding: 1.5rem 1rem;
-			}
-			.wrap {
-				margin: 0;
-			}
-			footer {
-				padding: 1rem;
-				text-align: center;
-			}
-			h1,
-			h2 {
-				font-size: 3rem;
-			}
-			h4 {
-				font-size: 1.6rem;
-			}
-			.text-center {
-				text-align: left;
-				padding-right: 2rem;
-			}
-			.colored-bg {
-				padding: 2rem 1rem;
-				font-weight: 400;
-			}
-			a {
-				font-size: 1.4rem;
-			}
-			.col-md-8 {
-				padding: 0 0;
-			}
-			code {
-				max-width: 82.5vw;
-				font-size: 1.4rem !important;
-			}
-		}
-
-		svg {
-			width: 100px;
-			height: 100px;
-			margin: 20px;
-			display: inline-block;
 		}
 
 		.center {
@@ -181,9 +137,54 @@
 			margin-left: 2rem;
 		}
 
-		code {
-			display: block;
-			font-size: 1.6rem;
-			overflow-wrap: break-word;
-			white-space: pre-wrap;
+		/* On small screens, set height to 'auto' for sidenav and grid */
+		@media screen and (max-width: 767px) {
+			footer {
+				padding: 1rem;
+				text-align: center;
+			}
+			h1, h2 {
+				font-size: 3rem;
+			}
+			h4 {
+				font-size: 1.6rem;
+			}
+
+			a {
+				font-size: 1.4rem;
+			}
+
+			code {
+				max-width: 82.5vw;
+				font-size: 1.4rem !important;
+			}
+			
+			.content {
+				/* padding: 0rem 1rem; */
+				height: 100%;
+				line-height: 1.2;
+				margin-bottom: 2rem;
+			}
+
+			.header {
+				padding: 1.5rem 1rem;
+			}
+
+			.wrap {
+				margin: 0;
+			}
+
+			.text-center {
+				text-align: left;
+				padding-right: 2rem;
+			}
+
+			.colored-bg {
+				padding: 2rem 1rem;
+				font-weight: 400;
+			}
+			
+			.col-md-8 {
+				padding: 0 0;
+			}
 		}

@@ -52,7 +52,7 @@
 		}
 
 		.content {
-			height: 72%;
+			height: 60%;
 			display: flex;
 			align-items: center;
 			justify-content: left;
@@ -145,6 +145,27 @@ svg{
 	margin-bottom: 2rem;
 }
 
+.mb-4 {
+	margin-bottom: 4rem;
+}
+
 .ml-2 {
 	margin-left: 2rem;
+}
+
+.text-primary {
+		color: #00a690;
+}
+
+.btn {
+	border-radius: 0px;
+	border: none;
+}
+
+.btn-primary {
+	background-color: #00a690;
+}
+
+.btn-primary:hover {
+	background-color: #007663;
 }
